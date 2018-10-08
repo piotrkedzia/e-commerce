@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+  <title>PlatformOS e-commerce</title>
+  <meta name="description" content="Example of a simple e-commerce site powered by PlatformOS">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="./">T-Shirts!</a>
+
+
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <main class="col-md-12 p-xs-3 pt-5">
+        <h1>Administration panel</h1>
+
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" href="./">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./products.html">
+              Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./users.html">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./orders.html">
+              Orders <span class="badge badge-light">3</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./payments.html">
+              Payments
+              <span class="badge badge-danger">3</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./reviews.html">
+              Reviews <span class="badge badge-light">9</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./settings.html">
+              Settings
+            </a>
+          </li>
+        </ul>
+
+
+        <p class="my-4">There are <b>150</b> registered users.</p>
+
+
+        <nav class="d-flex" aria-label="Users navigation">
+
+          <div class="flex-grow-1">
+            <form class="form-inline">
+
+              <label class="sr-only" for="search">Sort by</label>
+              <select class="custom-select">
+                <option selected>Sort by</option>
+                <option value="1">Name</option>
+                <option value="2">Registration date</option>
+              </select>
+
+              <label class="sr-only" for="search">Search</label>
+              <input type="text" class="form-control ml-2" id="search" placeholder="Enter name...">
+
+
+              <button type="submit" class="btn btn-light ml-2">Search</button>
+            </form>
+          </div>
+
+          <ul class="pagination justify-content-end">
+            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+
+        <div class="card-deck my-4">
+          <div class="card">
+            <a href="user.html">
+              <img class="card-img-top" src="https://randomuser.me/api/portraits/women/1.jpg" alt="Jane Doe">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Jane Doe</h5>
+              <a href="mailto:example@example.com" class="card-link">E-mail</a>
+              <a href="tel:48123456789" class="card-link">Call</a>
+            </div>
+          </div>
+          <div class="card">
+            <a href="user.html">
+              <img class="card-img-top" src="https://randomuser.me/api/portraits/men/1.jpg" alt="Jane Doe">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">James Doe</h5>
+              <a href="mailto:example@example.com" class="card-link">E-mail</a>
+              <a href="tel:48123456789" class="card-link">Call</a>
+            </div>
+          </div>
+          <div class="card">
+            <a href="user.html">
+              <img class="card-img-top" src="https://randomuser.me/api/portraits/women/2.jpg" alt="Jane Doe">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Amanda Doe</h5>
+              <a href="mailto:example@example.com" class="card-link">E-mail</a>
+              <a href="tel:48123456789" class="card-link">Call</a>
+            </div>
+          </div>
+          <div class="card">
+            <a href="user.html">
+              <img class="card-img-top" src="https://randomuser.me/api/portraits/men/2.jpg" alt="Jane Doe">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Kevin Doe</h5>
+              <a href="mailto:example@example.com" class="card-link">E-mail</a>
+              <a href="tel:48123456789" class="card-link">Call</a>
+            </div>
+          </div>
+          <div class="card">
+            <a href="user.html">
+              <img class="card-img-top" src="https://randomuser.me/api/portraits/women/3.jpg" alt="Jane Doe">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Lucy Doe</h5>
+              <a href="mailto:example@example.com" class="card-link">E-mail</a>
+              <a href="tel:48123456789" class="card-link">Call</a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="card-deck my-4">
+          <div class="card">
+            <a href="user.html">
+              <img class="card-img-top" src="https://randomuser.me/api/portraits/men/3.jpg" alt="Jane Doe">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Remy Doe</h5>
+              <a href="mailto:example@example.com" class="card-link">E-mail</a>
+              <a href="tel:48123456789" class="card-link">Call</a>
+            </div>
+          </div>
+          <div class="card">
+            <a href="user.html">
+              <img class="card-img-top" src="https://randomuser.me/api/portraits/women/4.jpg" alt="Jane Doe">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Kate Doe</h5>
+              <a href="mailto:example@example.com" class="card-link">E-mail</a>
+              <a href="tel:48123456789" class="card-link">Call</a>
+            </div>
+          </div>
+          <div class="card">
+            <a href="user.html">
+              <img class="card-img-top" src="https://randomuser.me/api/portraits/men/4.jpg" alt="Jane Doe">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Tom Doe</h5>
+              <a href="mailto:example@example.com" class="card-link">E-mail</a>
+              <a href="tel:48123456789" class="card-link">Call</a>
+            </div>
+          </div>
+          <div class="card">
+            <a href="user.html">
+              <img class="card-img-top" src="https://randomuser.me/api/portraits/women/5.jpg" alt="Jane Doe">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Alice Doe</h5>
+              <a href="mailto:example@example.com" class="card-link">E-mail</a>
+              <a href="tel:48123456789" class="card-link">Call</a>
+            </div>
+          </div>
+          <div class="card">
+            <a href="user.html">
+              <img class="card-img-top" src="https://randomuser.me/api/portraits/men/5.jpg" alt="Jane Doe">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Ritu Doe</h5>
+              <a href="mailto:example@example.com" class="card-link">E-mail</a>
+              <a href="tel:48123456789" class="card-link">Call</a>
+            </div>
+          </div>
+        </div>
+
+        <nav aria-label="Users navigation">
+
+
+          <ul class="pagination justify-content-end">
+            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+
+      </main>
+    </div>
+  </div> <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
