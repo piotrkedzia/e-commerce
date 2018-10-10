@@ -18,135 +18,113 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="./">T-Shirts!</a>
 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar-nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="./">Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="products.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="users.html">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="orders.html">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="payments.html">Payments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="settings.html">Settings</a>
+        </li>
+      </ul>
+      <div class="navbar-text mr-3 d-none d-lg-inline">Hello Admin!</div>
+      <form class="form-inline"><button type="submit" class="btn btn-sm btn-outline-light">Log out</button></form>
+    </div>
 
   </nav>
 
-  <div class="container">
-    <div class="row">
-      <main class="col-md-12 p-xs-3 pt-5">
-        <h1>Administration panel</h1>
+  <main class="container my-3 pt-5">
+    <p><a href="products.html">&laquo; Return to products listing</a></p>
 
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a class="nav-link" href="./">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="./products.html">
-              Products
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./users.html">Users</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./orders.html">
-              Orders <span class="badge badge-light">3</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./payments.html">
-              Payments
-              <span class="badge badge-danger">3</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./reviews.html">
-              Reviews <span class="badge badge-light">9</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./settings.html">
-              Settings
-            </a>
-          </li>
-        </ul>
+    <h1>
+      Add new product /
+      <span class="font-weight-light">Edit</span> <span class="font-weight-bold">Cool T-shirt</span>
+    </h1>
 
-        <div class="container my-3">
-          <div class="row">
-            <div class="col-md-3">
-              <ul class="nav flex-column nav-pills">
-                <li class="nav-item">
-                  <a href="categories.html" class="nav-link">Categories</a></li>
-                <li class="nav-item">
-                  <a href="products.html" class="nav-link active">Products</a></li>
-              </ul>
-            </div>
-            <div class="col-md-9 p-4">
-              <div class="d-flex mb-4">
-                <h3 class="flex-grow-1"><span class="font-weight-light">Edit</span> <span class="font-weight-bold">Cool
-                    T-shirt</span> </h3>
 
-              </div>
-              <form class="mb-3">
-                <div class="form-group">
-                  <label for="product-name">Product name</label>
-                  <input type="text" class="form-control" id="product-name" aria-describedby="name-help" placeholder="Enter product name"
-                    required>
-                  <small id="name-help" class="form-text text-muted">Provider a descriptive name for your product</small>
-                </div>
-                <div class="form-group">
-                  <label for="product-name">Price</label>
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="price-symbol">$</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Price" aria-describedby="price-symbol">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="product-brand">Brand</label>
-                  <select class="custom-select">
-                    <option selected>Select brand</option>
-                    <option value="1">Tommy Hilfiger</option>
-                    <option value="2">Adidas</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="product-description">Description <small class="text-muted">(optional)</small></label>
-                  <textarea class="form-control" id="product-description" placeholder="Describe this product"></textarea>
-                </div>
-
-                <h6>Available sizes</h6>
-                <div class="mt-2 mb-4">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="size-option-1" value="option1">
-                    <label class="form-check-label" for="size-option-1">XS</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="size-option-2" value="option2">
-                    <label class="form-check-label" for="size-option-2">S</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="size-option-3" value="option3">
-                    <label class="form-check-label" for="size-option-3">M</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="size-option-4" value="option4">
-                    <label class="form-check-label" for="size-option-4">L</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="size-option-5" value="option5">
-                    <label class="form-check-label" for="size-option-5">XL</label>
-                  </div>
-                </div>
-
-                <p>
-                  <button type="submit" class="btn btn-primary mr-sm-3">Save changes</button>
-                  <a href="product.html">Cancel</a>
-                </p>
-              </form>
-            </div>
+    <form class="mb-3">
+      <div class="form-group">
+        <label for="product-name">Product name</label>
+        <input type="text" class="form-control" id="product-name" aria-describedby="name-help" placeholder="Enter product name"
+          required>
+        <small id="name-help" class="form-text text-muted">Provider a descriptive name for your product</small>
+      </div>
+      <div class="form-group">
+        <label for="product-name">Price</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="price-symbol">$</span>
           </div>
+          <input type="text" class="form-control" placeholder="Price" aria-describedby="price-symbol">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="product-brand">Brand</label>
+        <select class="custom-select">
+          <option selected>Select brand</option>
+          <option value="1">Tommy Hilfiger</option>
+          <option value="2">Adidas</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="product-description">Description <small class="text-muted">(optional)</small></label>
+        <textarea class="form-control" id="product-description" placeholder="Describe this product"></textarea>
+      </div>
+
+      <h6>Available sizes</h6>
+      <div class="mt-2 mb-4">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="size-option-1" value="option1">
+          <label class="form-check-label" for="size-option-1">XS</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="size-option-2" value="option2">
+          <label class="form-check-label" for="size-option-2">S</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="size-option-3" value="option3">
+          <label class="form-check-label" for="size-option-3">M</label>
         </div>
 
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="size-option-4" value="option4">
+          <label class="form-check-label" for="size-option-4">L</label>
+        </div>
 
-      </main>
-    </div>
-  </div> <!-- Optional JavaScript -->
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="size-option-5" value="option5">
+          <label class="form-check-label" for="size-option-5">XL</label>
+        </div>
+      </div>
+
+      <p>
+        <button type="submit" class="btn btn-primary mr-sm-3">Save changes</button>
+        <a href="product.html">Cancel</a>
+      </p>
+    </form>
+  </main>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
     crossorigin="anonymous"></script>
