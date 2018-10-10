@@ -25,53 +25,53 @@
 
     <div class="collapse navbar-collapse" id="navbar-nav">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
-          <a class="nav-link" href="./">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="products.html">Products</a>
-        </li>
         <li class="nav-item active">
-          <a class="nav-link" href="categories.html">Categories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="users.html">Users</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="orders.html">Orders</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="payments.html">Payments</a>
+          <a class="nav-link" href="orders.html">My Orders</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="settings.html">Settings</a>
         </li>
       </ul>
-      <div class="navbar-text mr-3 d-none d-lg-inline">Hello Admin!</div>
+      <div class="navbar-text mr-3 d-none d-lg-inline">Hello Chris!</div>
       <form class="form-inline"><button type="submit" class="btn btn-sm btn-outline-light">Log out</button></form>
     </div>
 
   </nav>
 
   <main class="container my-3 pt-5">
-    <div class="d-flex mb-3">
-      <h1 class="flex-grow-1">Categories</h1>
+    <h1 class="mb-3">My Orders</h1>
 
-      <div>
-        <a href="category-edit.html" class="btn btn-primary">Add new category</a>
-      </div>
-    </div>
 
-    <ul class="list-group">
-      <li class="list-group-item"><a href="category.html">Brand</a> <small class="text-muted">(32
-          subcategories)</small></li>
-      <li class="list-group-item"><a href="category.html">Sex</a> <small class="text-muted text-small">(2
-          subcategories)</small></li>
-      <li class="list-group-item"><a href="category.html">Size</a> <small class="text-muted">(5
-          subcategories)</small></li>
-      <li class="list-group-item"><a href="category.html">Type</a> <small class="text-muted">(4
-          subcategories)</small></li>
-    </ul>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Order #</th>
+          <th scope="col">Date</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><a href="order.html">#12345</a></th>
+          <td>July 24, 2018</td>
+          <td>$199.65</td>
+          <td><span class="badge badge-warning">Awaiting payment</span></td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="order.html">#12345</a></th>
+          <td>July 24, 2018</td>
+          <td>$199.65</td>
+          <td><span class="badge badge-info">Cancelled</span></td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="order.html">#12345</a></th>
+          <td>July 24, 2018</td>
+          <td>$199.65</td>
+          <td><span class="badge badge-success">Shipped</span></td>
+        </tr>
+      </tbody>
+    </table>
 
   </main>
 
