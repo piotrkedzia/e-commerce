@@ -59,10 +59,7 @@
     <div class="d-flex mb-4">
       <div class="flex-grow-1">
         <h1>Order #12345</h1>
-        <p><span class="text-muted">Status Order:</span> <span class="badge badge-info">Awaiting payment</span></p>
       </div>
-
-
 
       <div class="dropdown">
         <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuUpload" data-toggle="dropdown"
@@ -76,35 +73,26 @@
       </div>
     </div>
 
-    <div class="container my-4">
-      <div class="row">
-        <div class="col-sm-2">
-          <a href="user.html">
-            <img class="img-fluid img-thumbnail" src="https://randomuser.me/api/portraits/women/3.jpg" alt="Jane Doe">
-          </a>
-        </div>
+    <h2>Client: <a href="user.html">Lucy Smith</a></h2>
 
-        <div class="col-sm-10">
-          <h2 class="display-4"><a href="user.html">Lucy Doe</a></h4>
-            <p class="my-0"><a href="mailto:example@example.com">example@example.com</a> | <a href="tel:48123456789">+48123456789</a></p>
-            <p class="text-muted"><small>Registered June 5, 2018</small></p>
-        </div>
-      </div>
-    </div>
-
+    <p><a href="mailto:example@example.com">example@example.com</a> | <a href="tel:48123456789">+48123456789</a></p>
 
     <div class="card-deck">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Billing Address</h5>
-          <p class="card-text">123 Park Street<br>
+          <p class="card-text">
+            Lucy Smith<br>
+            123 Park Street<br>
             Springfield, 95370 CA</p>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Shipping Address</h5>
-          <p class="card-text">321 Square Lane<br>
+          <p class="card-text">
+            Jim Doe<br>
+            321 Square Lane<br>
             Springfield, 95370 CA</p>
         </div>
       </div>
@@ -150,6 +138,32 @@
         <td class="text-right"><b>$74.97</b></td>
       </tfoot>
     </table>
+
+    <h2>Order history</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>20 June, 2018</td>
+          <td>Order placed</td>
+        </tr>
+        <tr>
+          <td>20 June, 2018</td>
+          <td>Payment received</td>
+        </tr>
+        <tr>
+          <td>22 June, 2018</td>
+          <td>Order shipped</td>
+        </tr>
+      </tbody>
+    </table>
+
 
   </main>
 

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+  <title>PlatformOS e-commerce</title>
+  <meta name="description" content="Example of a simple e-commerce site powered by PlatformOS">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="./">T-Shirts!</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar-nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">My Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="settings.html">Settings</a>
+        </li>
+      </ul>
+      <div class="navbar-text mr-3 d-none d-lg-inline">Hello Chris!</div>
+      <form class="form-inline"><button type="submit" class="btn btn-sm btn-outline-light">Log out</button></form>
+    </div>
+
+  </nav>
+
+  <main class="container my-3 pt-5">
+    <p><a href="index.html">&laquo; Return to my orders</a></p>
+
+    <h1>Order #12345</h1>
+
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Billing Address</h5>
+          <p class="card-text">
+            Lucy Smith<br>
+            123 Park Street<br>
+            Springfield, 95370 CA</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Shipping Address</h5>
+          <p class="card-text">
+            Jim Doe<br>
+            321 Square Lane<br>
+            Springfield, 95370 CA</p>
+        </div>
+      </div>
+    </div>
+
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Item</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Size</th>
+          <th scope="col" class="text-right">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1.</th>
+          <td><a href="../product.html">Cool T-shirt</a></td>
+          <td>1</td>
+          <td><span class="badge badge-light">M</span></td>
+          <td class="text-right">$24.99</td>
+        </tr>
+        <tr>
+          <th scope="row">2.</th>
+          <td><a href="../product.html">Even cooler T-shirt</a></td>
+          <td>1</td>
+          <td><span class="badge badge-light">L</span></td>
+          <td class="text-right">$24.99</td>
+        </tr>
+        <tr>
+          <th scope="row">3.</th>
+          <td><a href="../product.html">Even cooler T-shirt</a></td>
+          <td>1</td>
+          <td><span class="badge badge-light">XL</span></td>
+          <td class="text-right">$24.99</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <th scope="row" colspan="4" class="text-right">Total</th>
+        <td class="text-right"><b>$74.97</b></td>
+      </tfoot>
+    </table>
+
+    <h2>Order history</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>20 June, 2018</td>
+          <td>Order placed</td>
+        </tr>
+        <tr>
+          <td>20 June, 2018</td>
+          <td>Payment received</td>
+        </tr>
+        <tr>
+          <td>22 June, 2018</td>
+          <td>Order shipped</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </main>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

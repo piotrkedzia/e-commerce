@@ -25,10 +25,10 @@
 
     <div class="collapse navbar-collapse" id="navbar-nav">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item ">
           <a class="nav-link" href="index.html">My Orders</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="settings.html">Settings</a>
         </li>
       </ul>
@@ -39,39 +39,77 @@
   </nav>
 
   <main class="container my-3 pt-5">
-    <h1 class="mb-3">My Orders</h1>
+    <h1>Settings</h1>
+
+    <div class="card mb-5" style="max-width: 22rem;">
+      <div class="card-header">
+        My profile
+      </div>
+      <div class="card-body">
+        <h2 class="h5 card-title">Lucy Smith</h2>
+        <p class="card-text">Email: <a href="mailto:example@example.com">example@example.com</a></p>
+        <p class="card-text">Phone: <a href="tel:1123456789">+1 123 456 789</a></p>
+
+        <a href="edit-profile.html" class="btn btn-primary btn-sm">Edit profile</a>
+      </div>
+    </div>
 
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Order #</th>
-          <th scope="col">Date</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row"><a href="order.html">#12345</a></th>
-          <td>July 24, 2018</td>
-          <td>$199.65</td>
-          <td><span class="badge badge-warning">Awaiting payment</span></td>
-        </tr>
-        <tr>
-          <th scope="row"><a href="order.html">#12345</a></th>
-          <td>July 24, 2018</td>
-          <td>$199.65</td>
-          <td><span class="badge badge-info">Cancelled</span></td>
-        </tr>
-        <tr>
-          <th scope="row"><a href="order.html">#12345</a></th>
-          <td>July 24, 2018</td>
-          <td>$199.65</td>
-          <td><span class="badge badge-success">Shipped</span></td>
-        </tr>
-      </tbody>
-    </table>
+    <h2 class="mb-3">Address book</h2>
+
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Home</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Default address</h6>
+
+          <p class="card-text">
+            Lucy Smith<br>
+            123 Park Street<br>
+            Springfield, 95370 CA
+          </p>
+
+
+        </div>
+        <div class="card-footer">
+          <a href="edit-address.html" class="btn btn-primary btn-sm">Edit address</a>
+          <form class="d-inline">
+            <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Work</h5>
+
+          <p class="card-text">
+            Jim Doe<br>
+            321 Square Lane<br>
+            Springfield, 95370 CA
+          </p>
+        </div>
+
+        <div class="card-footer">
+          <a href="edit-address.html" class="btn btn-primary btn-sm">Edit address</a>
+          <form class="d-inline">
+            <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body d-flex justify-content-center align-items-center">
+
+
+          <a href="edit-address.html" class="btn btn-primary btn-lg">Add new address</a>
+
+        </div>
+
+
+      </div>
+    </div>
+
 
   </main>
 
