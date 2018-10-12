@@ -16,52 +16,52 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="../">T-Shirts!</a>
+    <a class="navbar-brand" href="./">T-Shirts!</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+
+
     <div class="collapse navbar-collapse" id="navbar-nav">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
-          <a class="nav-link" href="index.html">My Orders</a>
-        </li>
         <li class="nav-item active">
-          <a class="nav-link" href="settings.html">Settings</a>
+          <a class="nav-link" href="products.html">Men</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="products.html">Women</a>
         </li>
       </ul>
-      <div class="navbar-text mr-3 d-none d-lg-inline">Hello Chris!</div>
-      <form class="form-inline"><button type="submit" class="btn btn-sm btn-outline-light">Log out</button></form>
+
+      <ul class="navbar-nav">
+        <li class="nav-item mr-3">
+          <a class="btn btn-success" href="cart.html">Cart <span class="badge badge-light badge-pill ml-2">2</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Hello Chris!
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="user/index.html">My Orders</a>
+            <a class="dropdown-item" href="user/settings.html">Settings</a>
+            <div class="dropdown-divider"></div>
+            <form>
+              <button type="submit" class="dropdown-item">Log out</button>
+            </form>
+          </div>
+        </li>
+      </ul>
     </div>
 
   </nav>
 
   <main class="container my-3 pt-5">
 
-    <h1 class="flex-grow-1">Edit my profile</h1>
+    <h1>Cart</h1>
 
-
-
-    <form class="mb-3">
-      <div class="form-group">
-        <label for="full-name">Full name</label>
-        <input type="text" class="form-control" id="full-name" aria-describedby="name-help" placeholder="Enter your name"
-          required value="Lucy Smith">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" aria-describedby="name-help" placeholder="Enter your email"
-          required value="example@example.com">
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone</label>
-        <input type="text" class="form-control" id="phone" placeholder="Phone number" value="+1123456789">
-      </div>
-      <button type="submit" class="btn btn-primary mr-sm-3">Save changes</button>
-      <a href="settings.html">Cancel</a>
-    </form>
 
 
 
