@@ -63,9 +63,64 @@
     <h1>Cart</h1>
 
 
+    <form>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Picture</th>
+            <th scope="col">Name</th>
+            <th scope="col">Amount</th>
+            <th scope="col" class="text-right">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1.</th>
+            <td>
+              <a href="product.html">
+                <img src="./images/01.jpg" class="img-thumbnail" width="100" alt="Cool t-shirt photo">
+              </a>
+            </td>
+            <td><a href="./product.html">Cool T-shirt</a></td>
+            <td>
+              <label for="amount-product-1" class="sr-only">Amount of "Cool T-shirt" products</label>
+              <input type="number" class="form-control text-center" style="width: 60px" value="1" id="amount-product-1">
+            </td>
+            <td class="text-right">
+              $24.99
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2.</th>
+            <td>
+              <a href="product.html">
+                <img src="./images/02.jpg" class="img-thumbnail" width="100" alt="Cool t-shirt photo">
+              </a>
+            </td>
+            <td><a href="./product.html">Another Cool T-shirt</a></td>
+            <td>
+              <label for="amount-product-1" class="sr-only">Amount of "Cool T-shirt" products</label>
+              <input type="number" class="form-control text-center" style="width: 60px" value="2" id="amount-product-1">
+            </td>
+            <td class="text-right">
+              $49.98
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row" colspan="4" class="text-right">Total</th>
+            <td class="text-right">$74.97</td>
+          </tr>
+        </tfoot>
+      </table>
 
-
-
+      <div class="text-right mt-3">
+        <button type="submit" name="update" class="btn btn-light mr-2">Update cart</button>
+        <button type="submit" name="submit" class="btn btn-success">Checkout</button>
+      </div>
+    </form>
   </main>
   <footer class="border-top py-3 mt-3">
     <div class="container"><small>PlatformOS &copy; 2018</small></div>
