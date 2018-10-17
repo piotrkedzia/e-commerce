@@ -1,0 +1,33 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "Sample e-commerce solution for PlatformOS",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdyd-dev/e-commerce.git"
+  },
+  "keywords": [
+    "platformos",
+    "e-commerce",
+    "store",
+    "platform-os",
+    "ecommerce",
+    "shop"
+  ],
+  "author": "PlatformOS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mdyd-dev/e-commerce/issues"
+  },
+  "homepage": "https://github.com/mdyd-dev/e-commerce#readme",
+  "devDependencies": {
+    "@platform-os/marketplace-kit": "^2.3.5"
+  }
+}
