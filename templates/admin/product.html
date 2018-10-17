@@ -32,19 +32,10 @@
           <a class="nav-link" href="products.html">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="categories.html">Categories</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="users.html">Users</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="orders.html">Orders</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="payments.html">Payments</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="settings.html">Settings</a>
         </li>
       </ul>
       <div class="navbar-text mr-3 d-none d-lg-inline">Hello Admin!</div>
@@ -73,9 +64,31 @@
       </div>
     </div>
 
+    <div class="row mb-4">
+      <div class="col-sm-6">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">Brand</th>
+              <td>Adidas</td>
+            </tr>
+            <tr>
+              <th scope="row">Type</th>
+              <td>V-Neck</td>
+            </tr>
+            <tr>
+              <th scope="row">Sex</th>
+              <td>Men</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm-6 text-right">
+        <div class="display-4">$24.99</div>
+      </div>
+    </div>
 
 
-    <h4 class="display-4">$24.99</h4>
 
     <p>
       <i>
@@ -85,66 +98,91 @@
       </i>
     </p>
 
-    <h4>Available sizes</h4>
-    <p>
-      <span class="badge badge-pill badge-light">XS</span>
-      <span class="badge badge-pill badge-light">S</span>
-      <span class="badge badge-pill badge-light">M</span>
-      <span class="badge badge-pill badge-light">L</span>
-      <span class="badge badge-pill badge-light">XL</span>
-      <span class="badge badge-pill badge-light">XXL</span>
-    </p>
+    <h4>Photos</h4>
 
-    <div class="d-flex mt-4 mb-2">
-      <h4 class="flex-grow-1">Photos</h4>
+    <div class="row">
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
+        <a href="../images/01.jpg" target="_blank">
+          <img class="img-thumbnail img-responsive" src="../images/01.jpg" alt="Sample image">
+        </a>
+        <button type="button" class="btn btn-link" aria-label="Remove this photo">Remove</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
+        <a href="../images/02.jpg" target="_blank">
+          <img class="img-thumbnail img-responsive" src="../images/02.jpg" alt="Sample image">
+        </a>
+        <button type="button" class="btn btn-link" aria-label="Remove this photo">Remove</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
+        <a href="../images/03.jpg" target="_blank">
+          <img class="img-thumbnail img-responsive" src="../images/03.jpg" alt="Sample image">
+        </a>
+        <button type="button" class="btn btn-link" aria-label="Remove this photo">Remove</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
+        <a href="../images/04.jpg" target="_blank">
+          <img class="img-thumbnail img-responsive" src="../images/04.jpg" alt="Sample image">
+        </a>
+        <button type="button" class="btn btn-link" aria-label="Remove this photo">Remove</button>
+      </div>
 
-      <div>
-        <button class="btn btn-light btn-sm  dropdown-toggle" type="button" id="dropdownMenuUpload" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Add photo
-        </button>
-        <div class="dropdown-menu">
-          <form class="px-4 py-3">
-            <div class="form-group">
-              <label for="photo-file">File</label>
-              <input class="form-control-file form-control-sm" type="file" id="photo-file">
-            </div>
+    </div>
 
-            <div><button type="submit" class="btn btn-primary btn-sm">Upload</button></div>
-          </form>
+    <form class="my-2">
+      <div class="form-row align-items-center">
+        <div class="col-auto">
+          <label for="photo-file">Upload new photo</label>
+        </div>
+        <div class="col-auto">
+          <input class="form-control-file " type="file" id="photo-file">
+        </div>
+
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary btn-sm">Upload</button>
         </div>
       </div>
-    </div>
+    </form>
 
-    <div class="card-columns">
-      <div class="card">
-        <a href="../images/01.jpg" target="_blank">
-          <img class="card-img-top" src="../images/01.jpg" alt="Sample image">
-        </a>
-        <button type="button" class="btn btn-link" aria-label="Remove this photo">Remove</button>
-      </div>
-      <div class="card">
-        <a href="../images/02.jpg" target="_blank">
-          <img class="card-img-top" src="../images/02.jpg" alt="Sample image">
-        </a>
-        <button type="button" class="btn btn-link" aria-label="Remove this photo">Remove</button>
-      </div>
-      <div class="card">
-        <a href="../images/03.jpg" target="_blank">
-          <img class="card-img-top" src="../images/03.jpg" alt="Sample image">
-        </a>
+    <hr class="my-5">
 
-        <button type="button" class="btn btn-link" aria-label="Remove this photo">Remove</button>
+    <div class="d-flex mb-4">
+      <h4 class="flex-grow-1">Stock levels</h4>
 
-      </div>
-      <div class="card">
-        <a href="../images/04.jpg" target="_blank">
-          <img class="card-img-top" src="../images/04.jpg" alt="Sample image">
-        </a>
-        <button type="button" class="btn btn-link" aria-label="Remove this photo">Remove</button>
+      <div>
+        <a href="./stock-levels.html" class="btn btn-light">Edit stock levels</a>
       </div>
     </div>
 
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Size</th>
+          <th scope="col">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">XS</th>
+          <td>10</td>
+        </tr>
+        <tr>
+          <th scope="row">S</th>
+          <td>20</td>
+        </tr>
+        <tr>
+          <th scope="row">M</th>
+          <td>5</td>
+        </tr>
+        <tr>
+          <th scope="row">L</th>
+          <td>22</td>
+        </tr>
+        <tr>
+          <th scope="row">XL</th>
+          <td>Out of stock</td>
+        </tr>
+      </tbody>
+    </table>
 
     <div class="modal fade" id="removeProductModal" tabindex="-1" role="dialog" aria-labelledby="removeProductModalLabel"
       aria-hidden="true">

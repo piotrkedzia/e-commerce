@@ -32,19 +32,10 @@
           <a class="nav-link" href="products.html">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="categories.html">Categories</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="users.html">Users</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="orders.html">Orders</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="payments.html">Payments</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="settings.html">Settings</a>
         </li>
       </ul>
       <div class="navbar-text mr-3 d-none d-lg-inline">Hello Admin!</div>
@@ -56,19 +47,19 @@
   <main class="container my-3 pt-5">
     <h1 class="mb-3">Dashboard</h1>
 
-    <div class="card-columns">
+    <div class="card-deck">
 
-      <div class="card text-white bg-primary">
+      <div class="card ">
         <div class="card-header">Requiring attention</div>
         <div class="list-group list-group-flush">
           <a href="payments.html" class="list-group-item list-group-item-action">
-            <span class="badge badge-danger">3</span> payments failed
+            <span class="badge badge-light badge-pill">3</span> payments failed
           </a>
           <a href="orders.html" class="list-group-item list-group-item-action">
-            View <span class="badge badge-success">3</span> new orders since last login
+            <span class="badge badge-light badge-pill">3</span> orders this week
           </a>
           <a href="users.html" class="list-group-item list-group-item-action">
-            <span class="badge badge-primary">5</span> new users registered this week
+            <span class="badge badge-light badge-pill">5</span> users registered this week
           </a>
         </div>
       </div>
@@ -76,8 +67,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Products</h5>
-          <p class="card-text">You have <span class="badge badge-light">175</span> products and <span class="badge badge-light">4</span>
-            product categories.</p>
+          <p class="card-text">You have <span class="badge badge-light badge-pill">175</span> products.</p>
         </div>
 
         <div class="list-group list-group-flush">
@@ -85,20 +75,18 @@
             new product</a>
           <a href="products.html" class="list-group-item ist-group-item d-flex justify-content-between align-items-center">Manage
             products</a>
-          <a href="categories.html" class="list-group-item ist-group-item d-flex justify-content-between align-items-center">Manage
-            categories</a>
         </div>
       </div>
 
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Users</h5>
-          <p class="card-text">There are <span class="badge badge-light">175</span> registered users.</p>
+          <p class="card-text">There are <span class="badge badge-light badge-pill">175</span> registered users.</p>
         </div>
         <div class="list-group list-group-flush">
           <a href="users.html" class="list-group-item d-flex justify-content-between align-items-center">
             View new users
-            <span class="badge badge-primary badge-pill">5</span>
+            <span class="badge badge-light badge-pill">5</span>
           </a>
           <a href="users.html" class="list-group-item d-flex justify-content-between align-items-center">Manage
             users</a>
@@ -108,29 +96,15 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Orders</h5>
-          <p class="card-text">There are <span class="badge badge-light">320</span> orders in the system</p>
+          <p class="card-text">There are <span class="badge badge-light badge-pill">320</span> orders in the system</p>
         </div>
         <div class="list-group list-group-flush">
           <a href="orders.html" class="list-group-item d-flex justify-content-between align-items-center">
             View new orders
-            <span class="badge badge-success badge-pill">3</span>
+            <span class="badge badge-light badge-pill">3</span>
           </a>
           <a href="archived-orders.html" class="list-group-item ist-group-item d-flex justify-content-between align-items-center">Archived
             orders</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Payments</h5>
-          <p class="card-text">Payments so far total to <span class="badge badge-light">$13,350.50</span></p>
-        </div>
-        <div class="list-group list-group-flush">
-          <a href="payments.html" class="list-group-item d-flex justify-content-between align-items-center">View
-            failed
-            payments <span class="badge badge-danger badge-pill">3</span></a>
-          <a href="payments.html#all" class="list-group-item ist-group-item d-flex justify-content-between align-items-center">Manage
-            payments</a>
         </div>
       </div>
     </div>

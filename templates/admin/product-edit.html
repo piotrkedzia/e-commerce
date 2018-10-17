@@ -32,19 +32,10 @@
           <a class="nav-link" href="products.html">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="categories.html">Categories</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="users.html">Users</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="orders.html">Orders</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="payments.html">Payments</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="settings.html">Settings</a>
         </li>
       </ul>
       <div class="navbar-text mr-3 d-none d-lg-inline">Hello Admin!</div>
@@ -71,7 +62,7 @@
       </div>
       <div class="form-group">
         <label for="product-name">Price</label>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 " style="width: 150px">
           <div class="input-group-prepend">
             <span class="input-group-text" id="price-symbol">$</span>
           </div>
@@ -88,36 +79,49 @@
         </select>
       </div>
 
-      <div class="form-group">
-        <label for="product-description">Description <small class="text-muted">(optional)</small></label>
-        <textarea class="form-control" id="product-description" placeholder="Describe this product"></textarea>
+      <fieldset>
+        <legend class="h6">Sex</legend>
+        <div class="mt-2 mb-4">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="sex" id="sex-option-1" value="option1">
+            <label class="form-check-label" for="sex-option-1">Men</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="sex" id="sex-option-2" value="option2">
+            <label class="form-check-label" for="sex-option-2">Women</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="sex" id="sex-option-3" value="option3">
+            <label class="form-check-label" for="sex-option-3">Unisex</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend class="h6">Type</legend>
+        <div class="mt-2 mb-4">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="size" id="size-option-1" value="option1">
+            <label class="form-check-label" for="size-option-1">V-Neck</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="size" id="size-option-2" value="option2">
+            <label class="form-check-label" for="size-option-2">Crew Neck</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="size" id="size-option-3" value="option3">
+            <label class="form-check-label" for="size-option-3">Polo</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="row">
+        <div class="form-group col-lg-8 col-12">
+          <label for="product-description">Description <small class="text-muted">(optional)</small></label>
+          <textarea class="form-control" rows="5" id="product-description" placeholder="Describe this product"></textarea>
+        </div>
       </div>
 
-      <h6>Available sizes</h6>
-      <div class="mt-2 mb-4">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="size-option-1" value="option1">
-          <label class="form-check-label" for="size-option-1">XS</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="size-option-2" value="option2">
-          <label class="form-check-label" for="size-option-2">S</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="size-option-3" value="option3">
-          <label class="form-check-label" for="size-option-3">M</label>
-        </div>
-
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="size-option-4" value="option4">
-          <label class="form-check-label" for="size-option-4">L</label>
-        </div>
-
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="size-option-5" value="option5">
-          <label class="form-check-label" for="size-option-5">XL</label>
-        </div>
-      </div>
 
       <p>
         <button type="submit" class="btn btn-primary mr-sm-3">Save changes</button>

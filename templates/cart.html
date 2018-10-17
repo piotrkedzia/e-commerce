@@ -60,16 +60,17 @@
 
   <main class="container my-3 pt-5">
 
+
     <h1>Cart</h1>
 
-
-    <form action="checkout.html">
+    <form action="shipping.html">
       <table class="table">
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Picture</th>
             <th scope="col">Name</th>
+            <th scope="col">Size</th>
             <th scope="col">Amount</th>
             <th scope="col" class="text-right">Price</th>
           </tr>
@@ -83,9 +84,11 @@
               </a>
             </td>
             <td><a href="./product.html">Cool T-shirt</a></td>
+            <td>M</td>
             <td>
               <label for="amount-product-1" class="sr-only">Amount of "Cool T-shirt" products</label>
-              <input type="number" class="form-control text-center" style="width: 60px" value="1" id="amount-product-1">
+              <input type="number" class="form-control text-center d-inline" style="width: 60px" value="1" id="amount-product-1">
+              <button type="submit" class="btn btn-link">update</button>
             </td>
             <td class="text-right">
               $24.99
@@ -99,9 +102,11 @@
               </a>
             </td>
             <td><a href="./product.html">Another Cool T-shirt</a></td>
+            <td>L</td>
             <td>
               <label for="amount-product-1" class="sr-only">Amount of "Cool T-shirt" products</label>
-              <input type="number" class="form-control text-center" style="width: 60px" value="2" id="amount-product-1">
+              <input type="number" class="form-control text-center d-inline" style="width: 60px" value="2" id="amount-product-1">
+              <button type="submit" class="btn btn-link">update</button>
             </td>
             <td class="text-right">
               $49.98
@@ -110,15 +115,14 @@
         </tbody>
         <tfoot>
           <tr>
-            <th scope="row" colspan="4" class="text-right">Total</th>
+            <th scope="row" colspan="5" class="text-right">Total</th>
             <td class="text-right">$74.97</td>
           </tr>
         </tfoot>
       </table>
 
       <div class="text-right mt-3">
-        <button type="submit" name="update" class="btn btn-light mr-2">Update cart</button>
-        <button type="submit" name="submit" class="btn btn-success">Checkout</button>
+        <button type="submit" name="submit" class="btn btn-success">Shipping &raquo;</button>
       </div>
     </form>
   </main>
