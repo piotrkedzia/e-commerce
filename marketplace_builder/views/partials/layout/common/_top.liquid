@@ -1,0 +1,38 @@
+{%- capture page_title -%}{% yield 'page_title' %}{%- endcapture -%}
+{%- if page_title == blank -%}{% assign page_title = page.metadata.title %}{%- endif -%}
+
+{%- capture page_description -%}{% yield 'page_description' %}{%- endcapture -%}
+{%- if page_description == blank -%}{% assign page_description = page.metadata.description %}{%- endif -%}
+{%- if page_description == blank -%}
+  {%- assign page_description = "Example of a simple e-commerce site powered by PlatformOS" -%}
+{%- endif -%}
+
+<!doctype html>
+<html lang="en" class="env-{{ context.environment }}" data-env="{{ context.environment }}">
+
+<head>
+  <meta charset="utf-8">
+
+  {%- yield 'head_top' -%}
+
+  <title>
+    {% if page_title != blank %}{{ page_title }} | {% endif %}PlatformOS e-commerce
+  </title>
+  <meta name="description" content="{{ page_description }}" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <meta content="{{ form_authenticity_token }}" name="csrf-token">
+
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous"
+  />
+
+  {%- yield 'head_bottom' -%}
+</head>
+<body>
+  {%- include 'navigation' %}
