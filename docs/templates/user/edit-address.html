@@ -1,116 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
+    <title>PlatformOS e-commerce</title>
+    <meta
+      name="description"
+      content="Example of a simple e-commerce site powered by PlatformOS"
+    />
+  </head>
 
-  <title>PlatformOS e-commerce</title>
-  <meta name="description" content="Example of a simple e-commerce site powered by PlatformOS">
-</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="../">T-Shirts!</a>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="../">T-Shirts!</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar-nav"
+        aria-controls="navbar-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbar-nav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
-          <a class="nav-link" href="index.html">My Orders</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="settings.html">Settings</a>
-        </li>
-      </ul>
-      <div class="navbar-text mr-3 d-none d-lg-inline">Hello Chris!</div>
-      <form class="form-inline"><button type="submit" class="btn btn-sm btn-outline-light">Log out</button></form>
-    </div>
-
-  </nav>
-
-  <main class="container my-3 pt-5">
-
-    <h1 class="flex-grow-1">Add / Edit address</h1>
-
-
-
-    <form class="mb-3">
-      <div class="form-group">
-        <label for="address-label">Label</label>
-        <input type="text" class="form-control" id="address-label" aria-describedby="name-help" placeholder="e.g. Home"
-          required value="Home">
-        <small class="form-text text-muted" id="name-help">Add a descriptive label for your address, like <b>Home</b>
-          or <b>Work</b></small>
+      <div class="collapse navbar-collapse" id="navbar-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="index.html">My Orders</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="settings.html">Settings</a>
+          </li>
+        </ul>
+        <div class="navbar-text mr-3 d-none d-lg-inline">Hello Chris!</div>
+        <form class="form-inline">
+          <button type="submit" class="btn btn-sm btn-outline-light">
+            Log out
+          </button>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="address-street">Street address</label>
-        <input type="text" class="form-control" id="address-street" placeholder="Street and number, P.O. box" required
-          value="321 Square Lane">
-      </div>
-      <div class="form-group">
-        <label for="address-street2" class="sr-only">Street address (second line)</label>
-        <input type="text" class="form-control" id="address-street2" placeholder="Apartment, suite, unit, building, floor, etc.">
-      </div>
+    </nav>
 
-      <div class="form-group">
-        <label for="address-locality">City</label>
-        <input type="text" class="form-control" id="address-locality" value="Springfield">
-      </div>
+    <main class="container my-3 pt-5">
+      <h1 class="flex-grow-1">Add / Edit address</h1>
 
-      <div class="form-group">
-        <label for="address-region">State / province / region</label>
-        <input type="text" class="form-control" id="address-region" value="CA">
-      </div>
+      <form class="mb-3">
+        <div class="form-group">
+          <label for="address-label">
+            Label <br />
+            <small class="form-text text-muted" id="name-help"
+              >A descriptive label for your address, like <b>Home</b> or
+              <b>Work</b></small
+            >
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="address-label"
+            aria-describedby="name-help"
+            placeholder="e.g. Home"
+            required
+            value="Home"
+          />
+        </div>
+        <div class="form-group">
+          <label for="address">
+            Address
 
-      <div class="form-group">
-        <label for="address-zip">Zip code</label>
-        <input type="text" class="form-control" id="address-zip" value="95370">
-      </div>
+            <small class="form-text text-muted" id="address-help">
+              Full address with street, postal code and city.
+            </small>
+          </label>
+          <textarea
+            class="form-control"
+            id="address"
+            required
+            rows="3"
+            cols="70"
+          >
+321 Square Lane
+Springfield, 12345 CA</textarea
+          >
+        </div>
 
-      <div class="form-group">
-        <label for="address-phone">Phone number <small class="text-muted">(optional)</small></label>
-        <input type="text" class="form-control" id="address-phone" aria-describedby="phone-help">
-        <small class="form-text text-muted" id="phone-help">
-          May be used to assist delivery. If not provided, your default phone will be used
-        </small>
-      </div>
+        <div class="form-group">
+          <label for="address-phone"
+            >Phone number <small class="text-muted">(optional)</small> <br />
+            <small class="form-text text-muted" id="phone-help">
+              May be used to assist delivery. If not provided, your default
+              phone will be used
+            </small>
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="address-phone"
+            aria-describedby="phone-help"
+          />
+        </div>
 
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="primary-address">
-        <label class="form-check-label" for="primary-address">Default address</label>
-      </div>
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="primary-address"
+          />
+          <label class="form-check-label" for="primary-address"
+            >Default address</label
+          >
+        </div>
 
+        <button type="submit" class="btn btn-primary mr-sm-3">
+          Save changes
+        </button>
+        <a href="settings.html">Cancel</a>
+      </form>
+    </main>
+    <footer class="border-top py-3 mt-3">
+      <div class="container"><small>PlatformOS &copy; 2018</small></div>
+    </footer>
 
-      <button type="submit" class="btn btn-primary mr-sm-3">Save changes</button>
-      <a href="settings.html">Cancel</a>
-    </form>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"
+    ></script>
 
-
-
-
-  </main>
-  <footer class="border-top py-3 mt-3">
-    <div class="container"><small>PlatformOS &copy; 2018</small></div>
-  </footer>
-
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

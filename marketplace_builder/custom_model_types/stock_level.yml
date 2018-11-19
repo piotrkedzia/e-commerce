@@ -1,0 +1,8 @@
+name: stock_level
+custom_attributes:
+  - name: product_id
+    attribute_type: string
+  - name: variant
+    attribute_type: string
+  - name: amount
+    attribute_type: int

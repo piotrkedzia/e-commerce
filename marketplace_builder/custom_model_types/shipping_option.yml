@@ -1,0 +1,6 @@
+name: shipping_option
+custom_attributes:
+  - name: name
+    attribute_type: string
+  - name: price
+    attribute_type: int

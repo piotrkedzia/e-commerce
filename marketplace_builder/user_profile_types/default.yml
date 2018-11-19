@@ -1,0 +1,4 @@
+name: default
+custom_attributes:
+  - name: phone
+    attribute_type: string

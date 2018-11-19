@@ -1,0 +1,20 @@
+name: photo
+custom_attributes:
+  - name: product_id
+    attribute_type: string
+  - name: image
+    attribute_type: image
+    attribute_type: photo
+    versions_configuration:
+      thumb:
+        width: 250
+        height: 345
+        transform: resize_to_fill
+      mini:
+        width: 500
+        height: 800
+        transform: resize_to_fit
+      normal:
+        width: 1500
+        height: 1200
+        transform: resize_to_fit

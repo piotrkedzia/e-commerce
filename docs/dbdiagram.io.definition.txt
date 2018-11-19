@@ -1,0 +1,113 @@
+Table product {
+  id int PK
+  name text
+  description text
+  sex enum
+  price int
+  brand_id int
+  product_type_id int
+}
+
+Table user {
+  id int PK
+  name text
+  email text
+  phone text
+}
+
+
+Table brand {
+  id int PK
+  name text
+}
+
+Table product_type {
+  id int PK
+  name text
+}
+
+Table shipping_option {
+  id int PK
+  name text
+  price int
+}
+
+
+Table stock_level {
+  id int PK
+  product_id int
+  variant text
+  amount int
+}
+
+Table photo {
+  id int PK
+  product_id int
+  gallery_image photo
+}
+
+Table address {
+  id int PK
+  user_id int
+  label text
+  location text
+  default_address boolean
+}
+
+Table order {
+  id int PK
+  user_id int
+  billing_address text
+  shipping_address text
+  shipping_option_id int
+  shipping_option_name text
+  shipping_price int
+  comments text
+  state enum
+}
+
+Table order_product {
+  id int PK
+  product_id int
+  order_id int
+  name text
+  variant text
+  amount int
+  price int
+}
+
+Table payment {
+  id int PK
+  order_id int
+  state enum
+  timestamp datetime
+}
+
+Table order_history {
+  id int PK
+  order_id int
+  state enum
+  timestamp datetime
+}
+
+Ref: product.brand_id > brand.id
+
+Ref: product.product_type_id > product_type.id
+
+Ref: stock_level.product_id > product.id
+
+Ref: photo.product_id > product.id
+
+Ref: address.user_id > user.id
+
+Ref: order.user_id > user.id
+
+Ref: order_product.product_id > product.id
+
+Ref: order_product.order_id > order.id
+
+Ref: order.shipping_option_id > shipping_option.id
+
+Ref: order_history.order_id > order.id
+
+Ref: payment.order_id > order.id

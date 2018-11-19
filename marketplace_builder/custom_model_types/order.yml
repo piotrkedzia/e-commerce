@@ -1,0 +1,16 @@
+name: order
+custom_attributes:
+  - name: billing_address
+    attribute_type: text
+  - name: shipping_address
+    attribute_type: text
+  - name: shipping_option_id
+    attribute_type: string
+  - name: shipping_option_name
+    attribute_type: string
+  - name: shipping_price
+    attribute_type: int
+  - name: comments
+    attribute_type: text
+  - name: state
+    attribute_type: string

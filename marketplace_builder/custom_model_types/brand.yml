@@ -1,0 +1,4 @@
+name: brand
+custom_attributes:
+  - name: name
+    attribute_type: string

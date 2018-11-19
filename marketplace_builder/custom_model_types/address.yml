@@ -1,0 +1,8 @@
+name: address
+custom_attributes:
+  - name: label
+    attribute_type: string
+  - name: location
+    attribute_type: string
+  - name: default_address
+    attribute_type: boolean

@@ -1,0 +1,4 @@
+name: product_type
+custom_attributes:
+  - name: name
+    attribute_type: string

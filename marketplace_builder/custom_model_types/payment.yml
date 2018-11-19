@@ -1,0 +1,6 @@
+name: payment
+custom_attributes:
+  - name: order_id
+    attribute_type: string
+  - name: state
+    attribute_type: string
