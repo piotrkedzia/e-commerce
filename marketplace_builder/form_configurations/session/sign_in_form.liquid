@@ -1,0 +1,60 @@
+---
+name: sign_in_form
+resource: Session
+flash_notice: 'You are now logged in'
+redirect_to: >
+  {%- query_graph 'current_user', result_name: "g" -%}
+  {%- if g.current_user.profile.admin -%}
+    /admin
+  {%- else -%}
+    /
+  {%- endif -%}
+configuration:
+  email:
+    validation:
+      presence:
+        message: Please enter your email
+      email:
+        message: Provided email is invalid
+  password:
+    validation:
+      presence:
+        message: Password is required
+---
+{% form %}
+  <div class="form-group">
+    <label for="sign-in-email">Email</label>
+
+    <input
+      type="email"
+      class="form-control{% if form_builder.errors.email != blank %} is-invalid{% endif %}"
+      id="sign-in-email"
+      value="{{ form_builder.fields.email.value }}"
+      name="{{ form_builder.fields.email.name }}"
+    />
+
+    {% if form_builder.errors.email %}
+      <div class="invalid-feedback">{{ form_builder.errors.email }}</div>
+    {% endif %}
+  </div>
+  <div class="form-group">
+    <label for="sign-in-password">Password</label>
+
+    <input
+      type="password"
+      class="form-control{% if form_builder.errors.email != blank %} is-invalid{% endif %}"
+      id="sign-in-password"
+      name="{{ form_builder.fields.password.name }}"
+    />
+
+    {% if form_builder.errors.password %}
+      <div class="invalid-feedback">{{ form_builder.errors.password }}</div>
+    {% endif %}
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </div>
+{% endform %}

@@ -2,3 +2,5 @@ name: default
 custom_attributes:
   - name: phone
     attribute_type: string
+  - name: admin
+    attribute_type: boolean

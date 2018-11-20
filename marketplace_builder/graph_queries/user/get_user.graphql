@@ -1,0 +1,10 @@
+query get_user($id: ID, $email: String, $slug: String) {
+  user(id: $id, email: $email, slug: $slug) {
+    id
+    name
+    email
+    profile(profile_type: "default") {
+      properties
+    }
+  }
+}

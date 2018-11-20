@@ -1,0 +1,16 @@
+mutation promote_user_to_admin($id: ID) {
+  user_update(
+    form_configuration_name: "promote_user_to_admin_form"
+    id: $id
+    user: {
+      profiles: [
+        {
+          name: "default"
+          values: { properties: [{ name: "admin", value: "true" }] }
+        }
+      ]
+    }
+  ) {
+    id
+  }
+}

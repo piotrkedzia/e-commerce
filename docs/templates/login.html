@@ -1,100 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
+    <title>PlatformOS e-commerce</title>
+    <meta
+      name="description"
+      content="Example of a simple e-commerce site powered by PlatformOS"
+    />
+  </head>
 
-  <title>PlatformOS e-commerce</title>
-  <meta name="description" content="Example of a simple e-commerce site powered by PlatformOS">
-</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="./">T-Shirts!</a>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="./">T-Shirts!</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar-nav"
+        aria-controls="navbar-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <div class="collapse navbar-collapse" id="navbar-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="products.html">Men</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Women</a>
+          </li>
+        </ul>
 
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="register.html">Register</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <main class="col-md-8 col-lg-6 p-xs-3 pt-5">
+          <h1 class="mb-3">Log in</h1>
 
-    <div class="collapse navbar-collapse" id="navbar-nav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="products.html">Men</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="products.html">Women</a>
-        </li>
-      </ul>
+          <form>
+            <div class="form-group ">
+              <label for="inputEmail3">Email</label>
 
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="login.html">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="register.html">Register</a>
-        </li>
-      </ul>
-    </div>
-
-  </nav>
-
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <main class="col-md-8 col-lg-6 p-xs-3 pt-5">
-        <h1 class="mb-3">Log in</h1>
-
-        <form>
-          <div class="form-group ">
-            <label for="inputEmail3">Email</label>
-
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-
-          </div>
-          <div class="form-group">
-            <label for="inputPassword3">Password</label>
-
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-
-          </div>
-
-          <div class="form-group row">
-            <div class="col-sm-12">
-              <button type="submit" class="btn btn-primary">Sign in</button>
+              <input
+                type="email"
+                class="form-control"
+                id="inputEmail3"
+                placeholder="Email"
+              />
             </div>
-          </div>
+            <div class="form-group">
+              <label for="inputPassword3">Password</label>
 
-          <p class="text-right"><a href="./">I don’t remember my password</a></p>
-        </form>
+              <input
+                type="password"
+                class="form-control"
+                id="inputPassword3"
+                placeholder="Password"
+              />
+            </div>
 
-        <hr>
-        <p>Don’t have an account yet? <a href="./register.html">Register as a new user</a></p>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </div>
+            </div>
 
-      </main>
+            <p class="text-right">
+              <a href="./">I don’t remember my password</a>
+            </p>
+          </form>
 
+          <hr />
+          <p>
+            Don’t have an account yet?
+            <a href="./register.html">Register as a new user</a>
+          </p>
+        </main>
+      </div>
     </div>
+    <footer class="border-top py-3 mt-3">
+      <div class="container"><small>PlatformOS &copy; 2018</small></div>
+    </footer>
 
-  </div>
-  <footer class="border-top py-3 mt-3">
-    <div class="container"><small>PlatformOS &copy; 2018</small></div>
-  </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
