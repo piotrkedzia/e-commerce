@@ -1,6 +1,4 @@
-{% comment %} add_admin GraphQL queries go below {% endcomment %}
 {% query_graph 'get_user', result_name: g, email: "chrisd@near-me.com" %}
-
 {% assign user_id = g.users.first.id %}
-
 {% execute_query "promote_user_to_admin", id: user_id %}
+{% execute_query "set_user_password", id: user_id, password: 'admin' %}

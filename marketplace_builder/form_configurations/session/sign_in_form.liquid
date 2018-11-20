@@ -4,7 +4,7 @@ resource: Session
 flash_notice: 'You are now logged in'
 redirect_to: >
   {%- query_graph 'current_user', result_name: "g" -%}
-  {%- if g.current_user.profile.admin -%}
+  {%- if g.current_user.profile.properties.admin -%}
     /admin
   {%- else -%}
     /
@@ -21,6 +21,8 @@ configuration:
       presence:
         message: Password is required
 ---
+
+{{ form_builder | json }}
 {% form %}
   <div class="form-group">
     <label for="sign-in-email">Email</label>
@@ -42,7 +44,7 @@ configuration:
 
     <input
       type="password"
-      class="form-control{% if form_builder.errors.email != blank %} is-invalid{% endif %}"
+      class="form-control{% if form_builder.errors.password != blank %} is-invalid{% endif %}"
       id="sign-in-password"
       name="{{ form_builder.fields.password.name }}"
     />
