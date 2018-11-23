@@ -1,4 +1,4 @@
-query current_user {
+query get_current_user_data {
   current_user {
     id
     name

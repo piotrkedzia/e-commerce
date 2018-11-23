@@ -3,5 +3,7 @@ name: admin_user
 redirect_to: /unauthorized
 flash_alert: Sorry, you have to be an admin user to access this page.
 ---
-{% query_graph 'current_user', result_name: "g" %}
-{% if g.current_user.profile.properties.admin %}true{% endif %}
+{% parse_json current_user %}
+  {% include 'shared/get_current_user' %}
+{% endparse_json %}
+{% if current_user.has_admin_access %}true{% endif %}

@@ -1,0 +1,18 @@
+{% comment %}
+  Required params:
+    for_id: string
+    label: string
+
+  Optional params
+    required: boolean
+    hint: string
+
+{% endcomment %}
+<label for="{{ for_id }}">
+  {{ label }}
+  {% unless required %}<span>(Optional)</span>{% endunless %}
+
+  {%- if hint != blank -%}
+    <div><small class="form-text text-muted">{{ hint | html_safe }}</small></div>
+  {%- endif -%}
+</label>

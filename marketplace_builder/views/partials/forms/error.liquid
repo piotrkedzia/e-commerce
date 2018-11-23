@@ -1,0 +1,7 @@
+{% comment %}
+  Required params:
+    error: string
+{% endcomment %}
+{%- if error != blank -%}
+  <div class="invalid-feedback">{{ error }}</div>
+{%- endif -%}

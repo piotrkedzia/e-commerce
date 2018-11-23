@@ -1,0 +1,12 @@
+{% comment %}
+  Optional params:
+    label: string
+{% endcomment %}
+
+{% assign _label = label | default: "Submit" %}
+
+<div class="form-group row">
+  <div class="col-sm-12">
+    <button type="submit" class="btn btn-primary">{{ _label }}</button>
+  </div>
+</div>
