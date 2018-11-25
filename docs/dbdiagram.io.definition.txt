@@ -2,7 +2,7 @@ Table product {
   id int PK
   name text
   description text
-  sex enum
+  gender enum
   price int
   brand_id int
   product_type_id int

@@ -10,8 +10,8 @@
     readonly: boolean
     disabled: boolean
 {% endcomment %}
+
 {%- assign _type = type | default: 'text' -%}
-{%- assign _name = name | default: field.name -%}
 {%- assign _error = field.validation.errors.first -%}
 {%- assign _default_id = field.name | slugify -%}
 {%- assign _id = id | default: _default_id -%}
@@ -42,7 +42,7 @@
     type="{{ _type }}"
     class="form-control{% if _error != blank %} is-invalid{% endif %}"
     id="{{ _id }}"
-    name="{{ form_builder.fields.password.name }}"
+    name="{{ field.name }}"
     value="{{ _value }}"
     {% if _readonly %} readonly {% endif %}
     {% if _required %} required {% endif %}

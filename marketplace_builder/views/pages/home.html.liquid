@@ -1,5 +1,8 @@
 ---
 slug: /
 ---
+{% include "common" %}
 
-{% comment %} empty {% endcomment %}
+{% parse_json brand %}{% include "data/brand.json" %}{% endparse_json %}
+
+{{ brand | json }}
