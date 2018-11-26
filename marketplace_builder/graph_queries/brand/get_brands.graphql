@@ -1,0 +1,8 @@
+query get_brands {
+  customizations(name: "brand", per_page: 999) {
+    results {
+      id
+      name: property(name: "name")
+    }
+  }
+}

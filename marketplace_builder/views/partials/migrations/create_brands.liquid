@@ -1,0 +1,10 @@
+{% query_graph 'get_brands', result_name: existing %}
+{% parse_json brand_names %}{% include "data/brand.json" %}{% endparse_json %}
+
+{% assign existing_names = existing.customizations.results | map: "name" %}
+
+{% for name in brand_names %}
+  {% unless existing_names contains name %}
+    {% execute_query "create_brand", name: name %}
+  {% endunless %}
+{% endfor %}

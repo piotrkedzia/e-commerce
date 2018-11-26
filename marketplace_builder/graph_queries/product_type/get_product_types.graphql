@@ -1,0 +1,8 @@
+query get_product_types {
+  customizations(name: "product_type", per_page: 999) {
+    results {
+      id
+      name: property(name: "name")
+    }
+  }
+}

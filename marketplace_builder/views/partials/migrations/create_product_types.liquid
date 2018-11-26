@@ -1,0 +1,10 @@
+{% query_graph 'get_product_types', result_name: existing %}
+{% parse_json product_type_names %}{% include "data/product_type.json" %}{% endparse_json %}
+
+{% assign existing_names = existing.customizations.results | map: "name" %}
+
+{% for name in product_type_names %}
+  {% unless existing_names contains name %}
+    {% execute_query "create_product_type", name: name %}
+  {% endunless %}
+{% endfor %}
