@@ -1,0 +1,111 @@
+{% comment %}
+  Required params:
+    id: string
+{% endcomment %}
+{% query_graph "get_products", id: id, result_name: g %}
+{% assign product = g.customizations.results.first %}
+
+<p><a href="/admin/products">&laquo; Products listing</a></p>
+<div class="d-flex mb-4">
+  <h1 class="flex-grow-1">{{ product.name }}</h1>
+
+  <div class="dropdown">
+    <button
+      class="btn btn-light dropdown-toggle"
+      type="button"
+      id="dropdownMenuUpload"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Actions
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuUpload">
+      <a class="dropdown-item" href="/admin/product/{{ product.id }}/edit">Edit</a>
+
+      <button
+        type="button"
+        class="dropdown-item"
+        data-toggle="modal"
+        data-target="#removeProductModal"
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-sm-6">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th scope="row">Brand</th>
+          <td>{{ product.brand.name }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Type</th>
+          <td>{{ product.product_type.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-6 text-right">
+    <div class="display-4">{{ product.price | pricify_cents }}</div>
+  </div>
+</div>
+
+{% if product.description != blank %}
+<p>
+  <i>{{ product.description }}</i>
+</p>
+{% endif %}
+
+<div
+  class="modal fade"
+  id="removeProductModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="removeProductModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="removeProductModalLabel">
+          Danger zone
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Are you sure you want to remove this product? It will be removed
+          from your store catalogue but will still be visible in orders
+          history.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          data-dismiss="modal"
+        >
+          Cancel
+        </button>
+        {%
+          include_form "destroy_product_form",
+          resource_type: "product",
+          resource_id: product.id,
+          product_name: product.name
+        %}
+      </div>
+    </div>
+  </div>
+</div>

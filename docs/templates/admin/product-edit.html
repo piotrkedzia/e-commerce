@@ -1,145 +1,192 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
+    <title>PlatformOS e-commerce</title>
+    <meta
+      name="description"
+      content="Example of a simple e-commerce site powered by PlatformOS"
+    />
+  </head>
 
-  <title>PlatformOS e-commerce</title>
-  <meta name="description" content="Example of a simple e-commerce site powered by PlatformOS">
-</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="../">T-Shirts!</a>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="../">T-Shirts!</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar-nav"
+        aria-controls="navbar-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbar-nav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
-          <a class="nav-link" href="./">Dashboard</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="products.html">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="users.html">Users</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="orders.html">Orders</a>
-        </li>
-      </ul>
-      <div class="navbar-text mr-3 d-none d-lg-inline">Hello Admin!</div>
-      <form class="form-inline"><button type="submit" class="btn btn-sm btn-outline-light">Log out</button></form>
-    </div>
-
-  </nav>
-
-  <main class="container my-3 pt-5">
-    <p><a href="products.html">&laquo; Return to products listing</a></p>
-
-    <h1>
-      Add new product /
-      <span class="font-weight-light">Edit</span> <span class="font-weight-bold">Cool T-shirt</span>
-    </h1>
-
-
-    <form class="mb-3">
-      <div class="form-group">
-        <label for="product-name">Product name</label>
-        <input type="text" class="form-control" id="product-name" aria-describedby="name-help" placeholder="Enter product name"
-          required>
-        <small id="name-help" class="form-text text-muted">Provider a descriptive name for your product</small>
+      <div class="collapse navbar-collapse" id="navbar-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item "><a class="nav-link" href="./">Dashboard</a></li>
+          <li class="nav-item active">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="users.html">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="orders.html">Orders</a>
+          </li>
+        </ul>
+        <div class="navbar-text mr-3 d-none d-lg-inline">Hello Admin!</div>
+        <form class="form-inline">
+          <button type="submit" class="btn btn-sm btn-outline-light">
+            Log out
+          </button>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="product-name">Price</label>
-        <div class="input-group mb-3 " style="width: 150px">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="price-symbol">$</span>
-          </div>
-          <input type="text" class="form-control" placeholder="Price" aria-describedby="price-symbol">
+    </nav>
+
+    <main class="container my-3 pt-5">
+      <p><a href="products.html">&laquo; Return to products listing</a></p>
+
+      <h1>
+        Add new product / <span class="font-weight-light">Edit</span>
+        <span class="font-weight-bold">Cool T-shirt</span>
+      </h1>
+
+      <form class="mb-3">
+        <div class="form-group">
+          <label for="product-name">Product name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="product-name"
+            aria-describedby="name-help"
+            placeholder="Enter product name"
+            required
+          />
+          <small id="name-help" class="form-text text-muted"
+            >Provider a descriptive name for your product</small
+          >
         </div>
-      </div>
-
-      <div class="form-group">
-        <label for="product-brand">Brand</label>
-        <select class="custom-select">
-          <option selected>Select brand</option>
-          <option value="1">Tommy Hilfiger</option>
-          <option value="2">Adidas</option>
-        </select>
-      </div>
-
-      <fieldset>
-        <legend class="h6">Sex</legend>
-        <div class="mt-2 mb-4">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sex" id="sex-option-1" value="option1">
-            <label class="form-check-label" for="sex-option-1">Men</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sex" id="sex-option-2" value="option2">
-            <label class="form-check-label" for="sex-option-2">Women</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sex" id="sex-option-3" value="option3">
-            <label class="form-check-label" for="sex-option-3">Unisex</label>
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend class="h6">Type</legend>
-        <div class="mt-2 mb-4">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="size" id="size-option-1" value="option1">
-            <label class="form-check-label" for="size-option-1">V-Neck</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="size" id="size-option-2" value="option2">
-            <label class="form-check-label" for="size-option-2">Crew Neck</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="size" id="size-option-3" value="option3">
-            <label class="form-check-label" for="size-option-3">Polo</label>
+        <div class="form-group">
+          <label for="product-name">Price</label>
+          <div class="input-group mb-3 " style="width: 150px">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="price-symbol">$</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Price"
+              aria-describedby="price-symbol"
+            />
           </div>
         </div>
-      </fieldset>
 
-      <div class="row">
-        <div class="form-group col-lg-8 col-12">
-          <label for="product-description">Description <small class="text-muted">(optional)</small></label>
-          <textarea class="form-control" rows="5" id="product-description" placeholder="Describe this product"></textarea>
+        <div class="form-group">
+          <label for="product-brand">Brand</label>
+          <select class="custom-select">
+            <option selected>Select brand</option>
+            <option value="1">Tommy Hilfiger</option>
+            <option value="2">Adidas</option>
+          </select>
         </div>
-      </div>
 
+        <fieldset>
+          <legend class="h6">Type</legend>
+          <div class="mt-2 mb-4">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="size"
+                id="size-option-1"
+                value="option1"
+              />
+              <label class="form-check-label" for="size-option-1">V-Neck</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="size"
+                id="size-option-2"
+                value="option2"
+              />
+              <label class="form-check-label" for="size-option-2"
+                >Crew Neck</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="size"
+                id="size-option-3"
+                value="option3"
+              />
+              <label class="form-check-label" for="size-option-3">Polo</label>
+            </div>
+          </div>
+        </fieldset>
 
-      <p>
-        <button type="submit" class="btn btn-primary mr-sm-3">Save changes</button>
-        <a href="product.html">Cancel</a>
-      </p>
-    </form>
-  </main>
-  <footer class="border-top py-3 mt-3">
-    <div class="container"><small>PlatformOS &copy; 2018</small></div>
-  </footer>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-    crossorigin="anonymous"></script>
+        <div class="row">
+          <div class="form-group col-lg-8 col-12">
+            <label for="product-description"
+              >Description <small class="text-muted">(optional)</small></label
+            >
+            <textarea
+              class="form-control"
+              rows="5"
+              id="product-description"
+              placeholder="Describe this product"
+            ></textarea>
+          </div>
+        </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-</body>
+        <p>
+          <button type="submit" class="btn btn-primary mr-sm-3">
+            Save changes
+          </button>
+          <a href="product.html">Cancel</a>
+        </p>
+      </form>
+    </main>
+    <footer class="border-top py-3 mt-3">
+      <div class="container"><small>PlatformOS &copy; 2018</small></div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"
+    ></script>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

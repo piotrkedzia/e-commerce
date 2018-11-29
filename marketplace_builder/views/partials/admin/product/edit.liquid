@@ -1,0 +1,9 @@
+{% content_for "page_title" -%}Edit product{%- endcontent_for %}
+
+<h1>Edit product</h1>
+
+{%
+  include_form "product_form",
+  resource_type: "product",
+  resource_id: context.params.slug3
+%}

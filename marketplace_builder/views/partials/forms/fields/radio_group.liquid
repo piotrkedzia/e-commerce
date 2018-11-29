@@ -1,0 +1,56 @@
+{% comment %}
+  Required params:
+    field: hash
+    label: string
+    options: Array<{ [string]: string }>
+
+  Optional:
+    id: string
+    hint: string
+    readonly: boolean
+    disabled: boolean
+{% endcomment %}
+
+{%- assign _error = field.validation.errors.first -%}
+
+{%- assign _value = field.value -%}
+{%- assign _readonly = readonly | default: false -%}
+{%- assign _disabled = disabled | default: false -%}
+
+{%- if field.validation.rules.presence != blank -%}
+  {%- assign _required = true -%}
+{%- else -%}
+  {%- assign _required = false -%}
+{%- endif -%}
+
+<fieldset class="mb-4" id="{{ field.name | slugify }}">
+  <legend class="h6">
+    {{ label }}
+    {% unless _required == true %}<span>(Optional)</span>{% endunless %}
+  </legend>
+
+  {%- if hint != blank -%}
+    <p><small class="form-text text-muted">{{ hint | html_safe }}</small></p>
+  {%- endif -%}
+
+  <div class="mt-2">
+    {% for option in options %}
+      {% assign _input_id = field.name | append: '-' | append: option[0] | slugify %}
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="{{ field.name }}"
+          id="{{ _input_id }}"
+          value="{{ option[0] }}"
+          {% if option[0] == _value %} checked {% endif %}
+          {% if _readonly %} readonly {% endif %}
+          {% if _disabled %} disabled {% endif %}
+        >
+        <label class="form-check-label" for="{{ _input_id }}">{{ option[1] }}</label>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% include 'forms/error' with _error, id: _id %}
+</fieldset>

@@ -1,0 +1,23 @@
+---
+slug: admin/product
+layout_name: admin
+authorization_policies:
+  - admin_user
+  - admin_product_page
+---
+{% comment %}
+  Supported urls:
+    /admin/product/:id
+    /admin/product/:id/edit
+    /admin/product/new
+{% endcomment %}
+
+{% include "common" %}
+
+{% if params.slug3 == "new" %}
+  {% include "admin/product/new" %}
+{% elsif params.slugs == "edit" %}
+  {% include "admin/product/edit", id: params.slug3 %}
+{% else %}
+  {% include "admin/product/show", id: params.slug3 %}
+{% endif %}

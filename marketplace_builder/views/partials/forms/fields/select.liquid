@@ -1,0 +1,64 @@
+{% comment %}
+  Required params:
+    field: hash
+    label: string
+    options: Array<{ [string]: string >}
+
+  Optional:
+    id: string
+    hint: string
+    readonly: boolean
+    disabled: boolean
+    include_blank: string
+{% endcomment %}
+
+{%- assign _error = field.validation.errors.first -%}
+{%- assign _default_id = field.name | slugify -%}
+{%- assign _id = id | default: _default_id -%}
+
+{%- assign _value = field.value -%}
+
+{%- assign _readonly = readonly | default: false -%}
+{%- assign _disabled = disabled | default: false -%}
+
+{%- if field.validation.rules.presence != blank -%}
+  {%- assign _required = true -%}
+{%- else -%}
+  {%- assign _required = false -%}
+{%- endif -%}
+
+<div class="form-group">
+  {%
+    include 'forms/label' with label,
+      for_id: _id,
+      hint: hint,
+      required: _required
+  %}
+
+  <select
+    class="custom-select{% if _error != blank %} is-invalid{% endif %}"
+    id="{{ _id }}"
+    name="{{ field.name }}"
+    {% if _readonly %} readonly {% endif %}
+    {% if _required %} required {% endif %}
+    {% if _disabled %} disabled {% endif %}
+  >
+    {% if include_blank != blank %}
+      {% if include_blank == true %}
+        {% assign include_blank_label = " - select - " %}
+      {% else %}
+        {% assign include_blank_label = include_blank %}
+      {% endif %}
+      <option value="">{{ include_blank_label }}</option>
+    {% endif %}
+
+    {% for option in options %}
+      {% assign _input_id = field.name | append: '-' | append: option[0] | slugify %}
+      <option  value="{{ option[0] | raw_escape_string }}" {% if option[0] == field.value %} selected{% endif %}>
+        {{ option[1] }}
+      </option>
+    {% endfor %}
+  </select>
+
+  {% include 'forms/error' with _error, id: _id %}
+</div>

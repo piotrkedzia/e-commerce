@@ -1,15 +1,11 @@
 {%- include 'common' -%}
 {%- include 'layout/common/top' -%}
 
-{%- include 'navigation/page' %}
+{%- include 'navigation/admin' %}
 
 {%- include 'layout/flash_messages' -%}
 
 <main class="container my-3">
-  {% if page.metadata.title != blank %}
-    <h1 class="mb-3">{{ page.metadata.title }}</h1>
-  {% endif %}
-
   {{ content_for_layout }}
 </main>
 

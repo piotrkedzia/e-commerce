@@ -1,0 +1,54 @@
+{% comment %}
+  Required params:
+    field: hash
+    label: string
+
+  Optional:
+    id: string
+    hint: string
+    readonly: boolean
+    disabled: boolean
+    cols: integer
+    rows: integer
+{% endcomment %}
+
+{%- assign _error = field.validation.errors.first -%}
+{%- assign _default_id = field.name | slugify -%}
+{%- assign _id = id | default: _default_id -%}
+
+{%- assign _value = field.value -%}
+{%- assign _readonly = readonly | default: false -%}
+{%- assign _disabled = disabled | default: false -%}
+
+{%- assign _rows = rows | default: 10 -%}
+{%- assign _cols = cols | default: 70 -%}
+
+{%- if field.validation.rules.presence != blank -%}
+  {%- assign _required = true -%}
+{%- else -%}
+  {%- assign _required = false -%}
+{%- endif -%}
+
+<div class="form-group">
+  {%
+    include 'forms/label' with label,
+      for_id: _id,
+      hint: hint,
+      required: _required
+  %}
+
+  <textarea
+    class="form-control{% if _error != blank %} is-invalid{% endif %}"
+    id="{{ _id }}"
+    name="{{ field.name }}"
+    rows="{{ _rows }}"
+    cols="{{ _cols }}"
+    {% if _readonly %} readonly {% endif %}
+    {% if _required %} required {% endif %}
+    {% if _disabled %} disabled {% endif %}
+  >
+    {{- _value | default: '' | raw_escape_string -}}
+  </textarea>
+
+  {% include 'forms/error' with _error, id: _id %}
+</div>
