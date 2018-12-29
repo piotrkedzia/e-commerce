@@ -1,0 +1,14 @@
+---
+name: admin_product_page
+redirect_to: /404
+---
+{% comment %} New product form {% endcomment %}
+{% if params.slug3 == 'new' %}
+  true
+{% comment %} Fetch product by id {% endcomment %}
+{% elsif params.slug3 != blank %}
+  {% query_graph "get_products", id: context.params.slug3, result_name: g %}
+  {% if g.customizations.results.first != blank %}
+    true
+  {% endif %}
+{% endif %}

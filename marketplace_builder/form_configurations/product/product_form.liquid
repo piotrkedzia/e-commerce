@@ -1,0 +1,137 @@
+---
+name: product_form
+resource: Customization
+redirect_to: |-
+  {%- if params.form.new_record -%}
+    /admin/product/{{ form.id }}
+  {% else %}
+    /admin/product/{{ form.id }}/edit
+  {% endif %}
+flash_notice: Product details have been saved
+configuration:
+  new_record:
+    property_options:
+      virtual: true
+
+  properties:
+    name:
+      validation:
+        presence:
+          message: Enter product name
+    description:
+    price:
+      validation:
+        presence:
+          message: Enter price
+        numericality:
+          greater_than: 0
+          message: Price must be larger than 0
+    brand_id:
+      validation:
+        presence:
+          message: Select brand
+    product_type_id:
+      validation:
+        presence:
+          message: Select product type
+
+default_payload: >
+  {% if form %}
+    {
+      "properties_attributes": {
+        "price": {{ params.properties_attributes.price | times: 100 | round: 0 }}
+      }
+    }
+  {% endif %}
+---
+
+{% query_graph "get_brands", result_name: "gb" %}
+{% parse_json brand_options %}
+{
+  {% for brand in gb.customizations.results %}
+    {% unless forloop.first %},{% endunless %}
+    "{{ brand.id }}" : {{ brand.name | json }}
+  {% endfor %}
+}
+{% endparse_json %}
+
+{% query_graph "get_product_types", result_name: "gpt" %}
+{% parse_json product_type_options %}
+{
+  {% for product_type in gpt.customizations.results %}
+    {% unless forloop.first %},{% endunless %}
+    "{{ product_type.id }}" : {{ product_type.name | json }}
+  {% endfor %}
+}
+{% endparse_json %}
+
+{% form, html-class: "mb-3", html-novalidate: "novalidate" %}
+
+  <input type="hidden" name="slugs" value="{{ context.params.slugs | default: "" | raw_escape_string }}">
+
+  {% unless form_builder.fields.id.value %}
+    <input type="hidden" name="{{ form_builder.fields.new_record.name }}" value="1">
+  {% endunless %}
+
+  {% include "forms/errors_summary", errors: form_builder.errors %}
+
+  {%
+    include "forms/fields/text",
+      label: 'Product name',
+      field: form_builder.fields.properties.name,
+      hint: 'Provider a descriptive name for your product'
+  %}
+
+  {%
+    assign price = form_builder.fields.properties.price.value
+      | default: 0
+      | plus: 0.00
+      | divided_by: 100
+      | advanced_format: "%.2f"
+  %}
+
+  {%
+    include "forms/fields/text",
+      label: "Price",
+      type: "number",
+      field: form_builder.fields.properties.price,
+      addon_prepend: "$",
+      step: 0.01,
+      min: 0.01,
+      value: price
+  %}
+
+  {%
+    include "forms/fields/select",
+      label: "Brand",
+      field: form_builder.fields.properties.brand_id,
+      include_blank: "Select a Brand",
+      options: brand_options
+  %}
+
+  {%
+    include "forms/fields/radio_group",
+      label: "Type",
+      field: form_builder.fields.properties.product_type_id,
+      options: product_type_options
+  %}
+
+
+  {%
+    include "forms/fields/textarea",
+      label: "Description",
+      field: form_builder.fields.properties.description,
+      rows: 5
+  %}
+
+  <p>
+    <button type="submit" class="btn btn-primary mr-sm-3">Save</button>
+
+    {% if form_builder.fields.id.value != blank %}
+      <a href="/admin/product/{{ form_builder.fields.id.value }}">Cancel</a>
+    {% else %}
+      <a href="/admin/products">Cancel</a>
+    {% endif %}
+  </p>
+
+{% endform %}

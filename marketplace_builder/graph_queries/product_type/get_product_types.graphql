@@ -1,5 +1,9 @@
 query get_product_types {
-  customizations(name: "product_type", per_page: 999) {
+  customizations(
+    name: "product_type"
+    per_page: 999
+    sort: [{ name: "properties.name", order: "asc" }]
+  ) {
     results {
       id
       name: property(name: "name")

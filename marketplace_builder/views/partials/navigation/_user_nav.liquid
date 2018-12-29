@@ -1,0 +1,40 @@
+{% parse_json current_user %}{% include "shared/get_current_user" %}{% endparse_json %}
+<ul class="navbar-nav">
+  {% if context.current_user == blank %}
+    <li class="nav-item">
+      <a class="nav-link" href="/sign-in">Sign in</a>
+    </li>
+  {% else %}
+    {% unless current_user.has_admin_access %}
+    <li class="nav-item mr-3">
+      <a class="btn btn-success" href="cart.html">Cart</a>
+    </li>
+    {% endunless %}
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Hello {{ current_user.first_name }}!
+      </a>
+      <div
+        class="dropdown-menu dropdown-menu-right"
+        aria-labelledby="navbarDropdown"
+      >
+        {% if current_user.has_admin_access %}
+          <a class="dropdown-item" href="/admin">Admin Panel</a>
+        {% else %}
+          <a class="dropdown-item" href="user/index.html">My Orders</a>
+          <a class="dropdown-item" href="user/settings.html">Settings</a>
+        {% endif %}
+        <div class="dropdown-divider"></div>
+        {% include_form 'sign_out_form' %}
+      </div>
+    </li>
+  {% endif %}
+</ul>

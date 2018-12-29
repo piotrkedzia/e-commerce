@@ -9,6 +9,12 @@
     hint: string
     readonly: boolean
     disabled: boolean
+    addon_prepend: string
+    addon_append: string
+    min: number
+    max: number
+    step: number
+    value: string
 {% endcomment %}
 
 {%- assign _type = type | default: 'text' -%}
@@ -16,7 +22,7 @@
 {%- assign _default_id = field.name | slugify -%}
 {%- assign _id = id | default: _default_id -%}
 
-{%- assign _value = field.value -%}
+{%- assign _value = value | default: field.value -%}
 {%- if _type == 'password' %}
   {% assign _value = '' %}
 {%- endif -%}
@@ -30,6 +36,14 @@
   {%- assign _required = false -%}
 {%- endif -%}
 
+{% if addon_prepend %}
+  {% assign addon_prepend_id = _id | append: '-prepend-addon' %}
+{% endif %}
+
+{% if addon_append %}
+  {% assign addon_append_id = _id | append: '-append-addon' %}
+{% endif %}
+
 <div class="form-group">
   {%
     include 'forms/label' with label,
@@ -38,16 +52,49 @@
       required: _required
   %}
 
+  {% if addon_prepend != blank or addon_append != blank %}
+    <div class="input-group">
+  {% endif %}
+
+  {% if addon_prepend != blank %}
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="{{ addon_prepend_id }}">{{ addon_prepend }}</span>
+    </div>
+  {% endif %}
+
   <input
     type="{{ _type }}"
     class="form-control{% if _error != blank %} is-invalid{% endif %}"
     id="{{ _id }}"
     name="{{ field.name }}"
-    value="{{ _value }}"
+    value="{{ _value | default: '' | append: '' | raw_escape_string }}"
     {% if _readonly %} readonly {% endif %}
     {% if _required %} required {% endif %}
     {% if _disabled %} disabled {% endif %}
+    {% if step != blank %}
+      step="{{ step }}"
+    {% endif %}
+    {% if addon_prepend or addon_append %}
+      aria-describedby="{{ addon_prepend_id }} {{ addon_append_id }}"
+    {% endif %}
+    {% if min != blank %}
+      min="{{ min }}"
+    {% endif %}
+    {% if max != blank %}
+      max="{{ max }}"
+    {% endif %}
   />
 
-  {% include 'forms/error' with _error %}
+  {% if addon_append != blank %}
+    <div class="input-group-append">
+      <span class="input-group-text" id="{{ addon_append_id }}">{{ addon_append }}</span>
+    </div>
+  {% endif %}
+
+
+  {% if addon_prepend != blank or addon_append != blank %}
+    </div>
+  {% endif %}
+
+  {% include 'forms/error' with _error, id: _id %}
 </div>

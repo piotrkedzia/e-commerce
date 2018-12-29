@@ -1,0 +1,22 @@
+---
+name: destroy_product_form
+resource: Customization
+redirect_to: /admin/products
+flash_notice: Product has been deleted
+configuration:
+---
+{% comment %}
+  Optional params:
+    product_name: string
+{% endcomment %}
+
+{% form method: 'DELETE' %}
+  <button type="submit" class="btn btn-danger">
+    Remove
+    {% if product_name != blank %}
+      {{ product_name }}
+    {% else %}
+      product
+    {% endif %}
+  </button>
+{% endform %}

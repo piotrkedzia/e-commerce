@@ -1,0 +1,19 @@
+{% if context.flash != empty %}
+  <div aria-live="polite" class="container mt-4">
+    {%- for message in context.flash -%}
+      {% case message[0] %}
+        {% when 'alert' %}
+          {% assign type = "danger" %}
+        {% when 'notice' %}
+          {% assign type = "success" %}
+        {% else %}
+          {% assign type = "info" %}
+      {% endcase %}
+      {%- assign content = message[1] | strip -%}
+
+      <div class="alert alert-{{ type }} mt-2 mb-0" role="alert">
+        {{ content }}
+      </div>
+    {%- endfor -%}
+  </div>
+{% endif %}

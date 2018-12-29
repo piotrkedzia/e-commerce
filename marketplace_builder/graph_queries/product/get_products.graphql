@@ -1,0 +1,16 @@
+query get_products($id: ID) {
+  customizations(id: $id, name: "product") {
+    results {
+      id
+      name: property(name: "name")
+      description: property(name: "description")
+      price: property(name: "price")
+      brand: model(join_on_property: "brand_id") {
+        name: property(name: "name")
+      }
+      product_type: model(join_on_property: "product_type_id") {
+        name: property(name: "name")
+      }
+    }
+  }
+}

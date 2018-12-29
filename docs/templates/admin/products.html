@@ -1,181 +1,242 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
+    <title>PlatformOS e-commerce</title>
+    <meta
+      name="description"
+      content="Example of a simple e-commerce site powered by PlatformOS"
+    />
+  </head>
 
-  <title>PlatformOS e-commerce</title>
-  <meta name="description" content="Example of a simple e-commerce site powered by PlatformOS">
-</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="../">T-Shirts!</a>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="../">T-Shirts!</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar-nav"
+        aria-controls="navbar-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbar-nav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
-          <a class="nav-link" href="./">Dashboard</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="products.html">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="users.html">Users</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="orders.html">Orders</a>
-        </li>
-      </ul>
-      <div class="navbar-text mr-3 d-none d-lg-inline">Hello Admin!</div>
-      <form class="form-inline"><button type="submit" class="btn btn-sm btn-outline-light">Log out</button></form>
-    </div>
-
-  </nav>
-
-  <main class="container my-3 pt-5">
-
-    <div class="row">
-      <div class="col-10">
-        <h1>Products</h1>
-      </div>
-      <div class="col-2 text-right">
-        <p><a href="product-edit.html" class="btn btn-primary">Add new product</a></p>
-      </div>
-    </div>
-
-
-    <div class="row my-3">
-      <div class="col-md-3">
-        <h3 class="h5 mb-4">Filter products</h3>
-        <form>
-          <h4 class="h6">Sex</h4>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="sex-women">
-            <label class="form-check-label" for="sex-women">
-              Women
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="sex-men">
-            <label class="form-check-label" for="sex-men">
-              Men
-            </label>
-          </div>
-
-          <h4 class="h6 mt-4">Brand</h4>
-          <select class="custom-select">
-            <option selected>Select brand</option>
-            <option value="1">Tommy Hilfiger</option>
-            <option value="2">Your Turn</option>
-          </select>
-
-          <h4 class="h6 mt-4">Type</h4>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="type-1">
-            <label class="form-check-label" for="type-1">
-              Crew Neck
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="type-2">
-            <label class="form-check-label" for="type-2">
-              Polo
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="type-3">
-            <label class="form-check-label" for="type-3">
-              V Neck
-            </label>
-          </div>
+      <div class="collapse navbar-collapse" id="navbar-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item "><a class="nav-link" href="./">Dashboard</a></li>
+          <li class="nav-item active">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="users.html">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="orders.html">Orders</a>
+          </li>
+        </ul>
+        <div class="navbar-text mr-3 d-none d-lg-inline">Hello Admin!</div>
+        <form class="form-inline">
+          <button type="submit" class="btn btn-sm btn-outline-light">
+            Log out
+          </button>
         </form>
-
-
       </div>
-      <div class="col-md-9">
-        <div class="d-flex">
-          <p class="flex-grow-1">Showing <b>4</b> of <b>12</b> products</p>
-          <nav aria-label="Subcategories navigation">
-            <ul class="pagination justify-content-end">
-              <li class="page-item disabled"><a class="page-link" href="products.html" tabindex="-1">Previous</a></li>
-              <li class="page-item active"><a class="page-link" href="products.html">1</a></li>
-              <li class="page-item"><a class="page-link" href="products.html">2</a></li>
-              <li class="page-item"><a class="page-link" href="products.html">3</a></li>
-              <li class="page-item"><a class="page-link" href="products.html">Next</a></li>
-            </ul>
-          </nav>
-        </div>
+    </nav>
 
-
-        <div class="card-columns">
-          <div class="card">
-            <a href="product.html"><img class="card-img-top" src="../images/01.jpg" alt="Sample image"></a>
-            <div class="card-body">
-              <h5 class="card-title">$24.99</h5>
-              <p class="card-text">Cool t-shirt</p>
-            </div>
-          </div>
-          <div class="card">
-            <a href="product.html"><img class="card-img-top" src="../images/02.jpg" alt="Sample image"></a>
-            <div class="card-body">
-              <h5 class="card-title">$24.99</h5>
-              <p class="card-text">Cool t-shirt</p>
-            </div>
-          </div>
-          <div class="card">
-            <a href="product.html"><img class="card-img-top" src="../images/03.jpg" alt="Sample image"></a>
-            <div class="card-body">
-              <h5 class="card-title">$24.99</h5>
-              <p class="card-text">Cool t-shirt</p>
-            </div>
-          </div>
-          <div class="card">
-            <a href="product.html"><img class="card-img-top" src="../images/04.jpg" alt="Sample image"></a>
-            <div class="card-body">
-              <h5 class="card-title">$24.99</h5>
-              <p class="card-text">Cool t-shirt</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex">
-          <p class="flex-grow-1">Showing <b>4</b> of <b>12</b> products</p>
-          <nav aria-label="Subcategories navigation">
-            <ul class="pagination justify-content-end">
-              <li class="page-item disabled"><a class="page-link" href="products.html" tabindex="-1">Previous</a></li>
-              <li class="page-item active"><a class="page-link" href="products.html">1</a></li>
-              <li class="page-item"><a class="page-link" href="products.html">2</a></li>
-              <li class="page-item"><a class="page-link" href="products.html">3</a></li>
-              <li class="page-item"><a class="page-link" href="products.html">Next</a></li>
-            </ul>
-          </nav>
+    <main class="container my-3 pt-5">
+      <div class="row">
+        <div class="col-10"><h1>Products</h1></div>
+        <div class="col-2 text-right">
+          <p>
+            <a href="product-edit.html" class="btn btn-primary"
+              >Add new product</a
+            >
+          </p>
         </div>
       </div>
-    </div>
-  </main>
-  <footer class="border-top py-3 mt-3">
-    <div class="container"><small>PlatformOS &copy; 2018</small></div>
-  </footer>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-    crossorigin="anonymous"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-</body>
+      <div class="row my-3">
+        <div class="col-md-3">
+          <h3 class="h5 mb-4">Filter products</h3>
+          <form>
+            <h4 class="h6 mt-4">Brand</h4>
+            <select class="custom-select">
+              <option selected>Select brand</option>
+              <option value="1">Tommy Hilfiger</option>
+              <option value="2">Your Turn</option>
+            </select>
 
+            <h4 class="h6 mt-4">Type</h4>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="type-1"
+              />
+              <label class="form-check-label" for="type-1"> Crew Neck </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="type-2"
+              />
+              <label class="form-check-label" for="type-2"> Polo </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="type-3"
+              />
+              <label class="form-check-label" for="type-3"> V Neck </label>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-9">
+          <div class="d-flex">
+            <p class="flex-grow-1">Showing <b>4</b> of <b>12</b> products</p>
+            <nav aria-label="Subcategories navigation">
+              <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                  <a class="page-link" href="products.html" tabindex="-1"
+                    >Previous</a
+                  >
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="products.html">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="products.html">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="products.html">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="products.html">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="card-columns">
+            <div class="card">
+              <a href="product.html"
+                ><img
+                  class="card-img-top"
+                  src="../images/01.jpg"
+                  alt="Sample image"
+              /></a>
+              <div class="card-body">
+                <h5 class="card-title">$24.99</h5>
+                <p class="card-text">Cool t-shirt</p>
+              </div>
+            </div>
+            <div class="card">
+              <a href="product.html"
+                ><img
+                  class="card-img-top"
+                  src="../images/02.jpg"
+                  alt="Sample image"
+              /></a>
+              <div class="card-body">
+                <h5 class="card-title">$24.99</h5>
+                <p class="card-text">Cool t-shirt</p>
+              </div>
+            </div>
+            <div class="card">
+              <a href="product.html"
+                ><img
+                  class="card-img-top"
+                  src="../images/03.jpg"
+                  alt="Sample image"
+              /></a>
+              <div class="card-body">
+                <h5 class="card-title">$24.99</h5>
+                <p class="card-text">Cool t-shirt</p>
+              </div>
+            </div>
+            <div class="card">
+              <a href="product.html"
+                ><img
+                  class="card-img-top"
+                  src="../images/04.jpg"
+                  alt="Sample image"
+              /></a>
+              <div class="card-body">
+                <h5 class="card-title">$24.99</h5>
+                <p class="card-text">Cool t-shirt</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex">
+            <p class="flex-grow-1">Showing <b>4</b> of <b>12</b> products</p>
+            <nav aria-label="Subcategories navigation">
+              <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                  <a class="page-link" href="products.html" tabindex="-1"
+                    >Previous</a
+                  >
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="products.html">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="products.html">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="products.html">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="products.html">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="border-top py-3 mt-3">
+      <div class="container"><small>PlatformOS &copy; 2018</small></div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
