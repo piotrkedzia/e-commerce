@@ -18,7 +18,9 @@ configuration:
       validation:
         presence:
           message: Enter product name
+
     description:
+
     price:
       validation:
         presence:
@@ -26,10 +28,12 @@ configuration:
         numericality:
           greater_than: 0
           message: Price must be larger than 0
+
     brand_id:
       validation:
         presence:
           message: Select brand
+
     product_type_id:
       validation:
         presence:
