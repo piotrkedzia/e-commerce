@@ -1,0 +1,46 @@
+---
+name: create_photo_form
+resource: Customization
+redirect_to: /admin/product/{{ params.form.properties_attributes.product_id }}
+configuration:
+  properties:
+    product_id:
+      validation:
+        presence: true
+  custom_images:
+    image:
+      image:
+        validation:
+          presence:
+            message: 'Upload an image'
+---
+{% comment %}
+  Required params:
+    product_id: string
+{% endcomment %}
+
+{% form, html-class: "my-2", html-data-upload-form: true %}
+  <input type="hidden" name="{{ form_builder.fields.properties.product_id.name }}" value="{{ product_id }}">
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+      <label for="photo-file">Upload a new photo</label>
+    </div>
+    <div class="col-auto">
+      <input
+        class="form-control-file"
+        name="{{ form_builder.fields.custom_images.image.image.name }}"
+        type="file"
+        id="photo-file"
+        accept="image/png, image/jpeg">
+    </div>
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary btn-sm">Upload</button>
+    </div>
+  </div>
+{% endform %}
+
+{%
+  include "forms/upload/s3_script",
+    config: form_builder.fields.custom_images.image.image.s3_upload
+%}

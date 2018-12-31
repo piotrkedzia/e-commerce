@@ -1,0 +1,17 @@
+query get_photos($product_id: String) {
+  customizations(
+    name: "photo"
+    properties: [{ name: "product_id", value: $product_id }]
+  ) {
+    results {
+      id
+      product_id: property(name: "product_id")
+      image: custom_image(name: "image") {
+        id
+        thumb: url(version: "thumb")
+        mini: url(version: "mini")
+        normal: url(version: "normal")
+      }
+    }
+  }
+}

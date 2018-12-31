@@ -1,0 +1,28 @@
+{% comment %}
+  Required params:
+    product_id: string
+{% endcomment %}
+
+{%- query_graph "get_photos", result_name: "gp", product_id: product_id -%}
+
+<h4>Photos</h4>
+<div class="row">
+  {% for photo in gp.customizations.results %}
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
+      <a href="{{ photo.image.normal }}" target="_blank">
+        <img
+          class="img-thumbnail img-responsive"
+          src="{{ photo.image.thumb }}"
+          alt="Product photo"
+        />
+      </a>
+      {% include_form "destroy_photo_form", resource_type: "photo", resource_id: photo.id %}
+    </div>
+  {% endfor %}
+</div>
+
+{%
+  include_form "create_photo_form",
+    product_id: product_id,
+    resource_type: "photo"
+%}

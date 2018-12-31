@@ -1,0 +1,25 @@
+---
+name: destroy_photo_form
+resource: Customization
+redirect_to: /admin/product/{{ form.properties.product_id }}
+flash_notice: Photo has been deleted
+configuration:
+  properties:
+    product_id:
+      property_options:
+        readonly: true
+---
+{% comment %}
+  Optional params:
+    product_name: string
+{% endcomment %}
+
+{% form method: 'DELETE' %}
+  <button
+    type="submit"
+    class="btn btn-link"
+    aria-label="Remove this photo"
+  >
+    Remove
+  </button>
+{% endform %}
