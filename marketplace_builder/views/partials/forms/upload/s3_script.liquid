@@ -1,0 +1,65 @@
+{% comment %}
+  Required params:
+    config: s3_upload object from form_builder
+{% endcomment %}
+<script>
+  (function(config){
+    const form = document.querySelector('[data-upload-form]');
+    const input = form.querySelector('input[type="file"]');
+    const submitButton = form.querySelector('[type="submit"]');
+
+    function onSuccess(location) {
+      const inputOverride = document.createElement('input');
+      inputOverride.type = 'hidden';
+      inputOverride.name = input.name;
+      inputOverride.value = location;
+      input.disabled = true;
+      form.appendChild(inputOverride);
+      form.submit();
+    }
+
+    function onError(error) {
+      alert('We were unable to upload this file');
+      submitButton.disabled = false;
+      submitButton.innerText = 'Upload';
+      throw error;
+    }
+
+    function s3Upload(file, uploadUrl, metadata) {
+      const request = new XMLHttpRequest();
+      request.open('POST', uploadUrl, true);
+
+      const fd = new FormData();
+      for(const key in metadata) {
+        fd.append(key, metadata[key]);
+      }
+      fd.append('file', file)
+
+      request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+          onSuccess(request.responseXML.querySelector('Location').innerHTML);
+        } else {
+          onError(request.responseXML.querySelector('Message').innerHTML);
+        }
+      };
+
+      request.onerror = function() {
+        onError(request.responseText);
+      };
+
+      request.send(fd);
+    }
+
+    form.addEventListener('submit', function(event){
+      event.preventDefault();
+      const file = input.files[0];
+      if (!file) {
+        return;
+      }
+      submitButton.innerText = 'Uploading...';
+      submitButton.disabled = true;
+      s3Upload(file, config.direct_upload_url, config.form_data);
+    });
+
+  }({{ config | json }}));
+</script>
