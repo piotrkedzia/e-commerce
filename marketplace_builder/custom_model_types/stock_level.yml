@@ -5,4 +5,4 @@ custom_attributes:
   - name: variant
     attribute_type: string
   - name: amount
-    attribute_type: int
+    attribute_type: integer

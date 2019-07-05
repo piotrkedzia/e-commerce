@@ -5,7 +5,7 @@ custom_attributes:
   - name: description
     attribute_type: text
   - name: price
-    attribute_type: int
+    attribute_type: integer
   - name: brand_id
     attribute_type: string
   - name: product_type_id

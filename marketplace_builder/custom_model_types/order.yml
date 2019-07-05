@@ -9,7 +9,7 @@ custom_attributes:
   - name: shipping_option_name
     attribute_type: string
   - name: shipping_price
-    attribute_type: int
+    attribute_type: integer
   - name: comments
     attribute_type: text
   - name: state
