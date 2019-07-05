@@ -1,0 +1,59 @@
+---
+name: sign_up_form
+resource: User
+resource_owner: anyone
+flash_notice: 'Your account has been created (You can now sign in)'
+redirect_to: /sign-in
+configuration:
+  email:
+    validation:
+      presence:
+        message: Please enter your email
+      email:
+        message: Provided email is invalid
+  password:
+    validation:
+      presence:
+        message: Password is required
+  first_name:
+    validation:
+      presence:
+        message: Name is required
+---
+
+{% form %}
+
+  {%
+    include 'forms/fields/text',
+    label: 'First Name',
+    field: form_builder.fields.first_name
+  %}
+
+  {% if form_builder.errors.first_name %}
+    <p>{{ form_builder.errors.first_name }}</p>
+  {% endif %}
+
+  {%
+    include 'forms/fields/text',
+    label: 'Email',
+    field: form_builder.fields.email,
+    type: 'email'
+  %}
+
+  {% if form_builder.errors.email %}
+    <p>{{ form_builder.errors.email }}</p>
+  {% endif %}
+
+  {%
+    include 'forms/fields/text',
+    label: 'Password',
+    field: form_builder.fields.password,
+    type: 'password'
+  %}
+
+  {% if form_builder.errors.password %}
+    <p>{{ form_builder.errors.password }}</p>
+  {% endif %}
+
+  {% include 'forms/submit', label: 'Sign up' %}
+{% endform %}
